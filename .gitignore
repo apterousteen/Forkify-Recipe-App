@@ -1,0 +1,8 @@
+node_modules
+dist
+.parcel-cache
+features.png
+forkify-architecture-recipe-loading.png
+forkify-flowchart-part-1.png
+forkify-flowchart-part-2.png
+notes.md
