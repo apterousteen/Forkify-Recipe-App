@@ -112,7 +112,7 @@ const controlAddRecipe = async (newRecipe) => {
     } catch (err) {
         console.log(err);
         addRecipeView.renderErrorMessage();
-        addRecipeView.renderValidation();
+        addRecipeView.renderValidation(err);
     }
 }
 

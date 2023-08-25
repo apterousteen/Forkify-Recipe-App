@@ -1,7 +1,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import {API_URL, API_KEY, RESULTS_PER_PAGE, TIMEOUT_SEC} from "./config";
+import {API_URL, API_KEY, RESULTS_PER_PAGE} from "./config";
 import {getJSON, sendJSON} from "./helpers";
 
 /**
@@ -129,7 +129,7 @@ export const addBookmark = (recipe) => {
 
 /**
  * Removes the recipe from the bookmark array in the state. Updates the bookmarks in local storage.
- * @param {number}  id
+ * @param {string}  id
  */
 export const deleteBookmark = (id) => {
     // Delete bookmark
@@ -204,7 +204,7 @@ export const uploadRecipe = async (newRecipe) => {
 /**
  * Invokes as the Model module is loaded. Updates the bookmarks in local storage and parses the existing bookmarks to the state.
  */
-const init = async () => {
+const init = () => {
     const storage = localStorage.getItem('bookmarks');
     if (storage)
         state.bookmarks = JSON.parse(storage);
