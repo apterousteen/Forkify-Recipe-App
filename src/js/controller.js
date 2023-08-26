@@ -22,7 +22,7 @@ const controlRecipes = async () => {
 
         let isMobile = window.matchMedia('only screen and (max-width: 61.25em)').matches;
         if (isMobile) {
-            recipeView._parentElement.scrollIntoView();
+            recipeView._parentElement.scrollIntoView(true);
         }
 
         recipeView.renderSpinner();
