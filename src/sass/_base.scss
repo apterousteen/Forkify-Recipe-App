@@ -35,6 +35,7 @@ $bp-smallest: 31.25em; // 500px
 }
 
 html {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 62.5%;
 
