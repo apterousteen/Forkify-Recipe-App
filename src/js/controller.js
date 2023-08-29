@@ -20,11 +20,6 @@ const controlRecipes = async () => {
         const id = window.location.hash.slice(1);
         if (!id) return;
 
-        let isMobile = window.matchMedia('only screen and (max-width: 61.25em)').matches;
-        if (isMobile) {
-            recipeView._parentElement.scrollIntoView(true);
-        }
-
         recipeView.renderSpinner();
 
         // 0) Update search results view to mark selected search result
@@ -42,6 +37,12 @@ const controlRecipes = async () => {
 
         // 3) Rendering recipe
         recipeView.render(model.state.recipe);
+
+        // 4) Scroll to recipe on mobiles
+        let isMobile = window.matchMedia('only screen and (max-width: 61.25em)').matches;
+        if (isMobile) {
+            recipeView._parentElement.scrollIntoView(true);
+        }
     } catch (err) {
         console.error(`from controller: ${err}`);
         // Rendering ui
